@@ -21,32 +21,4 @@ To correctly anticipate the "subload" phase however, might prove more difficult.
 To provide an easy solution for ad creators and publisher alike the OVK developed a lightweight and fast solution, which can be inserted into any creative and correctly determines when to start the subload, no matter on which website the creative is served.
 
 Based on JavaScript, the solution can be pasted into the JavaScript code of the creative and exposes a new "Event" called "iabSubLoadStart". Any steps the creative should take during "subload", can be added via an EventListener on the "window" object of the creative.<br><br>
-
-
-###What you need to do
-To correctly integrate the solution, follow these simple steps:
-
-1.) Paste the following code into the JavaScript portion of your creative. This code is minimized to be as lightweight as possible. You will find a readable form at the end of this document.
-```
-!function(){var e={y:window.top!==window?window.top:window,t:4,p:function(){try{return window.top.document}catch(t){return!1}}(),w:function(t){"string"==typeof t.data&&"IAB_HOST_LOADED"===t.data&&(window.clearTimeout(e.k),e.x())},k:"",q:"function"==typeof CustomEvent?new CustomEvent("iabSubLoadStart"):document.createEvent("Event").initEvent("iabSubLoadStart",!0,!0),x:function(){return self.dispatchEvent(e.q)}};e.p?"complete"!==e.y.document.readyState?(console.log("SETTING READYSTATE LISTENER"),e.y.document.addEventListener("readystatechange",function(){"complete"===e.y.document.readyState&&e.x()})):this.x():(window.addEventListener("message",e.w.bind(e)),e.k=setTimeout(function(){window.removeEventListener("message",e.w),e.x()},1e3*e.t))}();
-``` 
-
-
-2.) Create a new JavaScript function, which will handle the "subload" phase of your creative (loading further resources, starting animations, and so on). For example, name it "startCreativeSubload".
-
-3.) Add a new EventListener for "iabSubLoadStart" to the window object, reference your new "subload" function as second argument of "addEventListener".
- 
- 
- ```
- <script>
- window.addEventListener('iabSubLoadStart', startCreativeSubLoad)
- </script>
- ``` 
-
-
-
-
-
-
- 
  
