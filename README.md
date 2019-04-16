@@ -4,6 +4,12 @@
 
 The L.E.A.N (**L**ight, **E**ncrpyted, **A**dChoice supported, **N**on-invasive) Ad Principals, released by the IAB as a new standard for serving online advertisements, aims to give ad creators, as well as publishers, a framework in which ads can be created and served as easily and lightweight as possible.
 
+Relevant Links from IAB Techlab:
+http://iabtechlab.com/blog/what-does-it-mean-to-be-lean/
+http://iabtechlab.com/blog/building-light-weight-and-load-optimized-ad-creatives/
+
+
+
 To archives this a creative may have 3 distinct loading phases, each limiting the ad on how many files and request if may process in that phase, so the ad may load as fast as possible and be visible as soon as possible to the website visitor.
 
 * "initial" phase: The creative may load a limited number of resources (like images and scripts), to provide a first but functional presentation of the ad. Furthermore it may load trackings to measure simple technical KPI's like impression and viewability. Most publisher's limit the maximum total file weight (example 100 KB) and  the amount of file request during this phase.  Make sure you are aware of the exact limitations for each publisher. <br><br>OVK members will all support the specification at http://www.werbeformen.de/ovk/ovk-de/werbeformen/spezifikationen/initialsubload.html
