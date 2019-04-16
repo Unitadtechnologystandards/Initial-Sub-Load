@@ -5,8 +5,8 @@
 The L.E.A.N (**L**ight, **E**ncrpyted, **A**dChoice supported, **N**on-invasive) Ad Principals, released by the IAB as a new standard for serving online advertisements, aims to give ad creators, as well as publishers, a framework in which ads can be created and served as easily and lightweight as possible.
 
 Relevant Links from IAB Techlab:
-http://iabtechlab.com/blog/what-does-it-mean-to-be-lean/
-http://iabtechlab.com/blog/building-light-weight-and-load-optimized-ad-creatives/
+* http://iabtechlab.com/blog/what-does-it-mean-to-be-lean/
+* http://iabtechlab.com/blog/building-light-weight-and-load-optimized-ad-creatives/
 
 
 
