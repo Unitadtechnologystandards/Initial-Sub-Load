@@ -1,13 +1,12 @@
 # Initial-Sub-Load
 
-###Intro
+### Intro
 
 The L.E.A.N (**L**ight, **E**ncrpyted, **A**dChoice supported, **N**on-invasive) Ad Principals, released by the IAB as a new standard for serving online advertisements, aims to give ad creators, as well as publishers, a framework in which ads can be created and served as easily and lightweight as possible.
 
 Relevant Links from IAB Techlab:
-* http://iabtechlab.com/blog/what-does-it-mean-to-be-lean/
-* http://iabtechlab.com/blog/building-light-weight-and-load-optimized-ad-creatives/
-
+* [http://iabtechlab.com/blog/what-does-it-mean-to-be-lean/](http://iabtechlab.com/blog/what-does-it-mean-to-be-lean/) 
+* [http://iabtechlab.com/blog/building-light-weight-and-load-optimized-ad-creatives/](http://iabtechlab.com/blog/building-light-weight-and-load-optimized-ad-creatives/)
 
 
 To archives this a creative may have 3 distinct loading phases, each limiting the ad on how many files and request if may process in that phase, so the ad may load as fast as possible and be visible as soon as possible to the website visitor.
@@ -19,12 +18,10 @@ To archives this a creative may have 3 distinct loading phases, each limiting th
 
 * "user initiated" phase: Only when the user interacts with the ad (swipe, click), the ad may load further resources without any limits. This can be full-length video spots or other heavy media files.
 
-
 For ad creators the "inital" phase is easy to program and accommodate. The loading process of the ad starts, so the ad can do a limited amount of steps before it has to stop and needs to wait for the "subload" phase.
 
 To correctly anticipate the "subload" phase however, might prove more difficult.  Most ads are "locked" inside a SafeFrame (an iframe with no way to access the site), or nested deep inside of iframe-chains with different solutions and scenarios on each website.
 
 To provide an easy solution for ad creators and publisher alike the OVK developed a lightweight and fast solution, which can be inserted into any creative and correctly determines when to start the subload, no matter on which website the creative is served.
 
-Based on JavaScript, the solution can be pasted into the JavaScript code of the creative and exposes a new "Event" called "iabSubLoadStart". Any steps the creative should take during "subload", can be added via an EventListener on the "window" object of the creative.<br><br>
- 
+Based on JavaScript, the solution can be pasted into the JavaScript code of the creative and exposes a new "Event" called "iabSubLoadStart". Any steps the creative should take during "subload", can be added via an EventListener on the "window" object of the creative.
