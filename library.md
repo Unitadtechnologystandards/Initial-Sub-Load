@@ -65,9 +65,16 @@ For the second state, the creative will wait a minimum of 4 seconds for the site
             }
         },
         loadTimer: '',
-        subLoadEvent: (typeof CustomEvent === 'function') ? new CustomEvent('iabSubLoadStart') : (document.createEvent('Event')).initEvent('iabSubLoadStart', true, true),
+        subLoadEvent(): function(){
+	    if (typeof CustomEvent === 'function') {
+	        return new CustomEvent('iabSubLoadStart');
+	    } else {
+	        var event = document.createEvent('Event');
+	        event.initEvent('iabSubLoadStart', true, true);
+	        return event;
+	    },
         startSubLoad: function () {
-            return self.dispatchEvent(iabSubLoadLib.subLoadEvent);
+            return self.dispatchEvent(iabSubLoadLib.subLoadEvent());
         }
     };
     if (iabSubLoadLib.friendlyFrame) {
