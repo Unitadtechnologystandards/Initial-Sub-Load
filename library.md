@@ -10,7 +10,7 @@ To correctly integrate the solution, follow these simple steps:
 2.) Create a new JavaScript function, which will handle the "subload" phase of your creative (loading further resources, starting animations, and so on). For example, name it "startCreativeSubload".
 
 3.) Add a new EventListener for "iabSubLoadStart" to the window object, reference your new "subload" function as second argument of "addEventListener".
- 
+
  
  ```
  <script>
@@ -19,6 +19,7 @@ To correctly integrate the solution, follow these simple steps:
  ``` 
 
 4.) Your done! The creative will now start "subload" as soon as it is able to. It is recommended to test your creative thoroughly. 
+Important: It must be ensured that the subload is only started once per creative, since the corresponding signals may be passed multiple times.
 
 
 ### How it works
