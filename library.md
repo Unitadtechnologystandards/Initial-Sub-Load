@@ -3,7 +3,7 @@ To correctly integrate the solution, follow these simple steps:
 
 1.) Paste the following code into the JavaScript portion of your creative. This code is minimized to be as lightweight as possible. You will find a readable form at the end of this document.
 ```
-!function(){var e={y:window.top!==window?window.top:window,t:4,p:function(){try{return window.top.document}catch(t){return!1}}(),w:function(t){"string"==typeof t.data&&"IAB_HOST_LOADED"===t.data&&(window.clearTimeout(e.k),e.x())},k:"",q:"function"==typeof CustomEvent?new CustomEvent("iabSubLoadStart"):document.createEvent("Event").initEvent("iabSubLoadStart",!0,!0),x:function(){return self.dispatchEvent(e.q)}};e.p?"complete"!==e.y.document.readyState?(console.log("SETTING READYSTATE LISTENER"),e.y.document.addEventListener("readystatechange",function(){"complete"===e.y.document.readyState&&e.x()})):this.x():(window.addEventListener("message",e.w.bind(e)),e.k=setTimeout(function(){window.removeEventListener("message",e.w),e.x()},1e3*e.t))}();
+!function(){var e={y:window.top!==window?window.top:window,t:4,p:function(){try{return window.top.document}catch(t){return!1}}(),w:function(t){"string"==typeof t.data&&"IAB_HOST_LOADED"===t.data&&(window.clearTimeout(e.k),e.x())},k:"",q:"function"==typeof CustomEvent?new CustomEvent("iabSubLoadStart"):document.createEvent("Event").initEvent("iabSubLoadStart",!0,!0),x:function(){return self.dispatchEvent(e.q)}};e.p?"complete"!==e.y.document.readyState?(console.log("SETTING READYSTATE LISTENER"),e.y.document.addEventListener("readystatechange",function(){"complete"===e.y.document.readyState&&e.x()})):e.x():(window.addEventListener("message",e.w.bind(e)),e.k=setTimeout(function(){window.removeEventListener("message",e.w),e.x()},1e3*e.t))}();
 ``` 
 
 
@@ -83,7 +83,7 @@ For the second state, the creative will wait a minimum of 4 seconds for the site
             });
         } else {
             //site is already loaded, start subload
-            this.startSubLoad();
+            iabSubLoadLib.startSubLoad();
         }
     } else {
         //we are in an unfriendly iframe, wait a bit before subload starts or the site sends a message that it is loaded
